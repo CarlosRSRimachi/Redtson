@@ -1,0 +1,775 @@
+/* EFECTO SCROLL */
+body::-webkit-scrollbar{
+    width:7px;
+    background:black;
+}
+body::-webkit-scrollbar-thumb{
+    background: #C20114;
+    border-radius: 20px;
+}
+
+/* Reglas Esteticas de CSS */
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* atributos repetitivos */
+.menu-logo,
+.name-rock-band,
+.presentation-rock-band div h2,
+.members-title,
+.info-music h2,
+.card-music span,
+.title-buy-rock,
+.gallery-rock-band p,
+.title-store,
+.contact-rock-band span,
+label{
+    font-family: 'Kanit', sans-serif;
+}
+
+.menu-nav-item,
+.welcome-rock-band,
+.presentation-rock-band div p,
+.presentation-rock-band div a,
+.card-member span,
+.info-music p,
+.card-music p,
+.buy-entrada,
+.buy-entrada button,
+.card-product span,
+.contact-rock-band p,
+form input,
+textarea,
+.copyright-rock-band span{
+    font-family: 'Exo 2', sans-serif;
+}
+
+.menu,
+.menu-nav-link,
+.banner,
+.presentation-rock-band div a,
+.member-name,
+.buy-rock-band,
+.buy-entrada button,
+footer,
+input[type="submit"]{
+    color:white;
+}
+
+img,
+video{
+    max-width: 100%;
+}
+
+h2{
+    font-size: 100px;
+    font-weight: bold;
+}
+/* Menu de Navegacion */
+.menu{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding: 20px 0 10px;
+    text-align: center;
+    transition: .2s;
+    z-index: 1000;
+}
+
+.menu-logo{
+    display:inline-block;
+    border: 2px solid white;
+    padding: 2px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.menu-nav{
+    list-style:none;
+    margin: 20px 0;
+}
+
+.menu-nav-item{
+    display: inline;
+    padding: 5px 30px;
+    font-size: 18px;
+}
+
+.menu-nav-link{
+    text-decoration: none;
+}
+
+/* Banner de la Pagina */
+.banner{
+    width:100%;
+    height: 100vh;
+    background-image: url("../resources/banner-rock-band.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.name-rock-band{
+    font-size: 150px;
+}
+
+.welcome-rock-band{
+    text-align: center;
+    width: 35%;
+    font-size: 18px;
+    margin: 25px 0;
+}
+
+.red-social-rock{
+    margin: 0 20px;
+}
+
+/* Section Our Band */
+.presentation-rock-band{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 10%;
+    padding:70px;
+    align-items: center;
+}
+
+.presentation-rock-band div{
+    display: flex;
+    flex-direction: column;
+}
+
+.presentation-rock-band div p{
+    font-size: 18px;
+    margin: 30px 0;
+    line-height: 25px;
+}
+
+.presentation-rock-band div a{
+    width: 60%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    background: #C20114;
+    text-decoration: none;
+    padding:10px 0;
+    text-transform: uppercase;
+}
+
+.presentation-rock-band div a svg{
+    margin: 0 10px;
+}
+
+.presentation-rock-band img{
+    border-radius: 50px;
+    filter: saturate(50%);
+}
+
+/* Section Miembros de la Banda */
+.members-rock-band{
+    width: 100%;
+    padding:10px 70px;
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto repeat(2,1fr);
+    row-gap: 25px;
+    column-gap: 20px;
+}
+
+.members-title{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+    .members-title::first-letter,
+    .members-title span:nth-of-type(1){
+        color:#C20114;
+        font-size: 80px;
+    }
+
+    .members-title span{
+        text-transform: uppercase;
+    }
+
+.card-member{
+    background-color: black;
+    border-radius: 25px 25px 10px 10px;
+}
+
+.card-member span{
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+}
+
+    .member-name{
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .member-work{
+        color: gray;
+        font-size: 14px;
+    }
+
+.card-member img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    filter: saturate(70%);
+}
+
+/* HR de Separacion entre Our Band y Music Band */
+hr{
+    border:0;
+    width: 25%;
+    height: 2vh;
+    position: relative;
+    margin: 25px 0 25px 70px;
+    background-color: #C20114;
+}
+
+/* Section Musica */
+.music-rock-band{
+    width: 100%;
+    padding:50px 70px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 5%;
+    row-gap: 70px;
+}
+
+.music-rock-band video{
+    border-radius: 30px;
+}
+
+.info-music{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-music p{
+    font-size: 18px;
+    margin: 30px 0;
+    line-height: 25px;
+}
+
+.music-rock-band video{
+    margin: 0;
+    padding: 0;
+}
+
+.card-music span{
+    display: block;
+    padding: 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.card-music p{
+    line-height: 20px;
+}
+
+/* Seccion de Venta de Entradas */
+.buy-rock-band{
+    width: 100%;
+    height:82vh;
+    padding:0 0 0 70px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    grid-template-rows: repeat(4,25%);
+}
+
+.banner-buy-entrada{
+    width:100%;
+    height:100%;
+    background-image: url("../resources/buy-entrada-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: contrast(100%);
+    grid-column: 2/3;
+    grid-row: 1/5;
+}
+
+.title-buy-rock{
+    font-size: 65px;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.buy-entrada{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.buy-entrada>span{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.place-concert p{
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.place-concert span{
+    color:gray;
+}
+
+.buy-entrada button{
+    border: 0;
+    background-color: #C20114;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Section Galeria */
+.gallery-rock-band{
+    width: 100%;
+    padding:50px 70px;
+}
+
+.gallery-rock-band p{
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.gallery-rock-band p::first-letter{
+    color:#C20114;
+    font-size: 120px;
+}
+
+.gallery-row{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+}
+
+.gallery-row-img{
+    width: 33.3%;
+    padding: 3px;
+    display:flex;
+    flex-direction: column;
+}
+
+.gallery-row-img img{
+    height: auto;
+    margin: 3px 0;
+    /* filter: saturate(50%); */
+    filter: contrast(125%);
+}
+
+/* Seccion de Tienda */
+.store-rock-band{
+    width: 100%;
+    padding:30px 70px 50px 70px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto repeat(2,500px);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.title-store{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title-store span:nth-of-type(1){
+    color:#C20114;
+    font-size: 120px;
+}
+
+.card-product img{
+    width:100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: top center;
+    transition: 0.3s;
+}
+
+.card-product img:hover{
+    filter: blur(10px);
+}
+
+.card-product span{
+    display: block;
+    height: 35px;
+    text-align: center;
+}
+
+.card-product span:nth-of-type(1){
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card-product span:nth-of-type(2){
+    font-size: 20px;
+    font-weight: bold;
+    color:gray;
+}
+
+.card-product span:nth-of-type(2)::before{
+    content: "S/.";
+}
+.card-product span:nth-of-type(2)::after{
+    content: " .00";
+}
+
+/* Seccion Footer */
+footer{
+    background-color: black;
+    padding: 50px 70px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr auto;
+    column-gap: 5%;
+    row-gap:30px;
+}
+
+.contact-rock-band {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.contact-rock-band span{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.contact-rock-band p{
+    font-size: 18px;
+    line-height:30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form input,
+label,
+textarea{
+    display: block;
+    font-size: 18px;
+    outline: none;
+    border: 0;
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type="email"],
+textarea
+{
+    margin: 15px 0;
+    padding: 10px;
+    background:gray;
+    color:black;
+}
+
+input[type="submit"]{
+    display: inline-block;
+    width: 40%;
+    padding: 10px 0;
+    background-color:#C20114;
+    text-transform: uppercase;
+}
+
+textarea{
+    resize: none;
+}
+
+.copyright-rock-band{
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+
+.copyright-rock-band{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.copyright-rock-band span{
+    font-size: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1280px)  {
+    .menu{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1000px)  {
+    .members-rock-band{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto repeat(3,1fr);
+    }
+
+    .members-rock-band p{
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+
+    .buy-rock-band{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 50px 0;
+    }
+
+    .title-buy-rock{
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .buy-entrada{
+        width: 100vw;
+        padding: 10px 15%;
+    }
+
+    .buy-entrada span,
+    .buy-entrada button{
+        width: 20%;
+    }
+    .place-concert{
+        width: 30%;
+    }
+
+    .store-rock-band{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto repeat(3,1fr);
+    }
+
+    .store-rock-band p{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    footer{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .presentation-rock-band
+    {
+        display:flex;
+        flex-direction: column;
+        padding:0;
+    }
+
+    .presentation-rock-band div{
+        width: 100%;
+        padding: 20px 70px;
+    }
+
+    .presentation-rock-band div a{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .presentation-rock-band img{
+        width:100%;
+        border-radius: 0;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .music-rock-band{
+        display:flex;
+        flex-direction: column;
+        row-gap: 40px;
+        padding: 20px 70px;
+    }
+
+    .card-music{
+        background: black;
+    }
+
+    .music-rock-band video{
+        border-radius: 0;
+    }
+
+    .card-music span,
+    .card-music p{
+        padding: 10px 30px;
+    }
+
+    .card-music span{
+        color: white;
+    }
+
+    .card-music p{
+        color: gray;
+    }
+}
+
+@media screen and (max-width:700px){
+    .buy-entrada span{
+        width:20%;
+    }
+
+    .place-concert,
+    .buy-entrada button{
+        width: 30%;
+    }
+
+    .members-rock-band{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto repeat(4,1fr);
+    }
+
+    .members-rock-band p{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    hr{
+        margin: 25px 0 25px 40px;
+    }
+
+    .music-rock-band,
+    .store-rock-band{
+        padding: 40px;
+    }
+
+    .copyright-rock-band{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .copyright-rock-band span,
+    .more-red-social{
+        padding: 10px 0;
+    }
+}
+
+
+@media screen and (max-width:411px) {
+
+    .name-rock-band{
+        font-size: 90px;
+    }
+
+    .welcome-rock-band{
+        width: 100%;
+    }
+
+    h2{
+        font-size: 50px;
+    }
+
+    .members-rock-band{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .buy-rock-band{
+        height:auto;
+    }
+
+    .banner-buy-entrada{
+        display:none;
+    }
+
+    .buy-entrada{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .buy-entrada span,
+    .place-concert,
+    .buy-entrada button{
+        width:100%;
+    }
+
+    .place-concert,
+    .buy-entrada button{
+        margin: 20px 0 0 0;
+    }
+
+    .gallery-rock-band p,
+    .title-store,.contact-rock-band span{
+        font-size: 40px;
+    }
+
+    .gallery-rock-band p::first-letter,
+    .title-store span:nth-of-type(1){
+        font-size: 50px;
+    }
+
+
+    .gallery-row-img{
+        width: 100%;
+    }
+
+    .gallery-row-img:nth-of-type(2),
+    .gallery-row-img:nth-of-type(3){
+        display: none;
+    }
+
+
+    .store-rock-band{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:360px){
+
+    .card-product img{
+        height:400px;
+    }
+
+    .card-product span:nth-of-type(1){
+        font-size: 20px;
+    }
+    .card-product span:nth-of-type(2){
+        font-size: 16px;
+    }
+}
